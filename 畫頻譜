@@ -1,0 +1,14 @@
+若要畫某個信號之頻譜(spectrum)，可用下列程式
+
+
+clear,close all;
+
+[y, fs]=wavread('welcome.wav');        %讀取wave檔
+t = (1:length(y))/fs;
+plot(t,y);
+f = linspace(-fs/2, fs/2, length(y));  %將區間(-fs/2, fs/2)分割出 length(y)個點 
+y_f = fft(y)                           %將信號 y 取快速傅立葉轉換
+figure,plot(f,fftshift(abs(y_f)))      % 取絕對值後將原點平移至中間即得到 y 之頻譜
+
+
+
