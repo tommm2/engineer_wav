@@ -1,0 +1,9 @@
+clear,close all;
+
+[y,fs] = wavread('welcome.wav');
+
+sound(3*y,fs);
+
+sound(3*-y,fs);
+
+sound(3*flipud(y),fs);
