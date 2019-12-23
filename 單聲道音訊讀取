@@ -1,0 +1,9 @@
+clear,close all;
+
+[y,fs] = audioread('flanger.wav');
+
+sound(y,fs);   %播出此音訊
+
+time = (1:length(y))/fs;  %時間軸的向量
+
+plot(time,y);       %畫時間軸的波型
