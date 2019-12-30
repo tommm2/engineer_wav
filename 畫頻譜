@@ -3,6 +3,8 @@
 
 clear,close all;
 
+pkg load communications
+
 [y, fs]=wavread('welcome.wav');        %讀取wave檔
 t = (1:length(y))/fs;
 plot(t,y);
